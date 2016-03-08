@@ -1,0 +1,4 @@
+# Defaults can be overwritten, see runit/map.jinja for default values
+# runit:
+#   lookup:
+#     SVDIR: '/var/service'
