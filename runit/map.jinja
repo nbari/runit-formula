@@ -1,6 +1,6 @@
 {% set conf = salt['grains.filter_by']({
     'Debian':  {'runit': 'runit',
-                'service': 'runit',
+                'service': 'runsvdir',
                 'SVDIR': '/service',
                 'sv_path': '/usr/bin/sv',
                 },

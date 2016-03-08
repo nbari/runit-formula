@@ -8,7 +8,7 @@ runit:
     - enable: True
     - restart: True
     - require:
-        pkg: runit
+      - pkg: runit
     - watch:
       - file: runit
 {% if grains['os_family'] == 'FreeBSD' %}
@@ -34,7 +34,7 @@ runit:
   file.directory:
     - makedirs: True
     - require:
-      pkg: runit
+      - pkg: runit
 
 {% if grains['os_family'] == 'Debian' %}
 SVDIR_environment:
@@ -43,7 +43,7 @@ SVDIR_environment:
     - text:
       - SVDIR={{ conf.get('SVDIR', '/service') }}
     - require:
-      pkg: runit
+      - pkg: runit
 {% endif %}
 
 /bin/sv:
