@@ -1,0 +1,3 @@
+{%- from "runit/map.jinja" import conf with context -%}
+runsvdir_enable="YES"
+runsvdir_path="{{ conf.get('SVDIR', '/service') }}"

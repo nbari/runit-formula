@@ -1,0 +1,12 @@
+{% set conf = salt['grains.filter_by']({
+    'Debian':  {'runit': 'runit',
+                'service': 'runit',
+                'SVDIR': '/service',
+                'sv_path': '/usr/bin/sv',
+                },
+    'FreeBSD': {'runit': 'runit',
+                'service': 'runsvdir',
+                'SVDIR': '/service',
+                'sv_path': '/usr/local/sbin/sv',
+                },
+}, grain='os_family', merge=salt['pillar.get']('runit:lookup')) %}
