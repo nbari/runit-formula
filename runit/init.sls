@@ -22,6 +22,7 @@ runit:
       - file: /etc/environment
   file.managed:
     - name: /usr/sbin/runsvdir-start
+    - template: jinja
     - source: salt://runit/files/runsvdir-start
     - user: root
     - group: root
